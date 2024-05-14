@@ -18,7 +18,7 @@ const Navbar = () => {
         <div>Home</div>
         <div>Contact</div>
         <div>About</div>
-        <div>Sign Up</div>
+        <div><Link to="/login">Signup</Link></div>
       </div>
       <div className='flex gap-[5%] w-[40%] justify-center items-center'>
         <div className='w-[50%] flex items-center bg-gray-50 rounded-lg'>
