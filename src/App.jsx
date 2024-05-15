@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Productdetail from './pages/Productdetail'
 import Cart from './pages/Cart'
+import Phonesidebar from './components/Phonesidebar'
 
 function App() {
  
@@ -13,6 +14,7 @@ function App() {
     <Route path='/login' element={<Login/>}/>
     <Route path='/productdetail/:id' element={<Productdetail/>}/>
     <Route path='/cart' element={<Cart/>}/>
+    <Route path='/phonesidebar' element={<Phonesidebar/>}/>
   </Routes>
   </>
   )

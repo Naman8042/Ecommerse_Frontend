@@ -9,10 +9,10 @@ const Card = ({props}) => {
   const dispatch = useDispatch()
 
   return (
-    <div className='w-88 h-64  flex flex-col   hover:shadow-2xl '>
-      <div className='w-72 flex flex-col relative 'onMouseEnter={() => setIsHovered(true)}
+    <div className='w-48 sm:w-88  sm:h-64  flex flex-col justify-center   hover:shadow-2xl '>
+      <div className='w-48 md:w-72 flex flex-col relative 'onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>
-        <img src={Keyboard} alt="" className='' 
+        <img src={Keyboard} alt="" className='w-48 md:w-72' 
         />
         {isHovered && (
         <button
@@ -24,7 +24,7 @@ const Card = ({props}) => {
         )}
 
       </div>
-      <div className='p-[1%] w-full'>
+      <div className='p-[1%] w-full items-center justify-center'>
         <p className='font-semibold '>{props.name}</p>
         <p className='text-red-500'>{props.price}</p>
       </div>
