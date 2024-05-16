@@ -5,6 +5,8 @@ import Card from '../components/Card'
 import { Rating } from 'react-simple-star-rating'
 import { useParams } from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
+import ImageScroller from '../components/ImageScroller';
+
 
 const Productdetail = () => {
   const data = useSelector((state) => state.counter.value)
@@ -13,6 +15,14 @@ const Productdetail = () => {
   const handleRating = (rate) => {
     setRating(rate)
   }
+  const images = [
+    Keyboard,
+    Keyboard,
+    Keyboard,
+    Keyboard,
+    Keyboard,
+  ];
+
 
   const data1=[
     {name:"AK-900 Wired Keyboard",price:"120"},
@@ -21,15 +31,15 @@ const Productdetail = () => {
     {name:"AK-900 Wired Keyboard",price:"120"},
   ]
   return (
-    <div className="h-screen">
+    <div className=" overflow-x-hidden">
 
       <div className="h-[10%]">
         <Navbar />
       </div>
       
-      <div className="w-screen px-[10%] h-[90%] flex items-center gap-[5%]">
+      <div className="w-screen px-[10%] h-[90%] flex flex-col sm:flex-row items-center gap-[5%]">
         
-        <div className="w-[60%] flex gap-5 ">
+        <div className="w-[60%] gap-5 hidden sm:flex ">
           <div className="w-[20%] ">
             <div className="w-full p-[1%] my-[5%]">
               <img src={Keyboard} alt="" />
@@ -48,7 +58,11 @@ const Productdetail = () => {
             <img src={Keyboard} alt="" className="" />
           </div>
         </div>
-        <div className="w-[40%] flex flex-col gap-5">
+        <div className='w-full block sm:hidden'>
+          <ImageScroller images={images}/>
+        </div>
+    
+        <div className="w-full sm:w-[40%] flex flex-col gap-5">
           <p className="text-3xl font-semibold">Havic HV G-92 Gamepad</p>
           
           
@@ -59,37 +73,37 @@ const Productdetail = () => {
             Necessitatibus ducimus consectetur excepturi hic. Perspiciatis
             libero minima qui iste enim dignissimos consequatur!
           </p>
-          <div className="flex w-full  items-center">
-            <div className="w-[50%] flex  items-center mx-[1%]">
-              <button className="w-[20%] p-[1%] border-2 text-2xl border-collapse border-gray-500 text-center">
+          <div className="flex sm:flex-row flex-col w-full gap-5 sm:gap-1 items-center">
+            <div className="w-[40%] sm:w-[50%] flex  items-center mx-[1%]">
+              <button className="w-[25%] sm:w-[20%] p-[1%] border-2 text-2xl border-collapse border-gray-500 text-center">
                 +
               </button>
-              <div className="w-[40%] p-[1%] border-y-2 text-2xl text-center border-collapse border-gray-500">
+              <div className="w-[50%] sm:w-[40%] p-[1%] border-y-2 text-2xl text-center border-collapse border-gray-500">
                 1
               </div>
-              <button className="w-[20%] p-[1%] border-2 text-2xl border-collapse border-gray-500 text-center">
+              <button className="w-[25%] sm:w-[20%] p-[1%] border-2 text-2xl border-collapse border-gray-500 text-center">
                 -
               </button>
             </div>
-            <div className="w-full">
-              <button className="w-[50%] py-[2%]  text-xl border-collapse bg-red-700 text-white text-center">
+            <div className="w-full flex flex-col sm:flex-row gap-4">
+              <button className="w-full rounded-2xl sm:w-[50%] py-[2%]  text-xl border-collapse bg-red-700 text-white text-center">
                 Buy Now
+              </button>
+              <button className="w-full rounded-2xl sm:w-[50%] py-[2%]  text-xl border-collapse bg-red-700 text-white text-center">
+                Add to Cart
               </button>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="flex justify-between px-[5%] mt-[4%]">
-        {data1.map((data) => (
-          <Card props={data}/>
+      <div className=" grid grid-cols-2 sm:flex justify-between  mt-[4%] gap-2 px-[1%]">
+        {data1.slice(0,8).map((data) => (
+          <Card props={data} className='flex'/>
         ))}
       </div>
       <div className='App'>
-      <Rating
-        onClick={handleRating}
-  
-      />
+     
     </div>
          
     </div>
