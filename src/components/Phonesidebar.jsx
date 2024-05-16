@@ -5,7 +5,8 @@ import { BiSolidDashboard } from "react-icons/bi";
 import { RiLinksFill } from "react-icons/ri";
 import { VscNotebook } from "react-icons/vsc";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,Link} from 'react-router-dom';
+
 
 const Phonesidebar = ({}) => {
   const navigate = useNavigate()
@@ -39,10 +40,10 @@ const Phonesidebar = ({}) => {
       </div>
       </div>
       <div className='w-[90%]  my-[1%] py-[4%] px-[10%] flex justify-evenly border-b-2'>
-      <div className='flex w-[90%] gap-3 justify- items-center'>
+      <Link className='flex w-[90%] gap-3 justify- items-center' to="/cart">
       <VscNotebook/>
-      <p className='text-xl'>Daily Summary</p>
-      </div>
+      <p className='text-xl'>My Cart</p>
+      </Link>
       <div className='w-[10%] flex justify-center items-center'>
       <FaAngleRight />  
       </div>
