@@ -39,11 +39,11 @@ const ImageScroller = ({ images }) => {
   };
 
   return (
-    <div className="w-full mx-auto px-4 mb-[8%]">
+    <div className="w-full mx-auto px-2 mb-[8%]">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
-            <img className="rounded-lg" src={image} alt={`Product ${index}`} />
+            <img className="rounded-lg " src={image} alt={`Product ${index}`} />
           </div>
         ))}
       </Slider>

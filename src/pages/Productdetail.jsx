@@ -31,16 +31,16 @@ const Productdetail = () => {
     {name:"AK-900 Wired Keyboard",price:"120"},
   ]
   return (
-    <div className=" overflow-x-hidden">
+    <div className=" overflow-x-hidden h-screen">
 
       <div className="h-[10%]">
         <Navbar />
       </div>
-      
-      <div className="w-screen px-[10%] h-[90%] flex flex-col sm:flex-row items-center gap-[5%]">
+      <div className='h-[90%]'>
+      <div className="w-screen px-[10%]  h-[90%] overflow-x-auto flex flex-col sm:flex-row items-center justify-center gap-[5%]">
         
-        <div className="w-[60%] gap-5 hidden sm:flex ">
-          <div className="w-[20%] ">
+        <div className="w-[60%] gap-5 hidden sm:flex h-screen">
+          <div className="w-[20%] flex flex-col justify-center ">
             <div className="w-full p-[1%] my-[5%]">
               <img src={Keyboard} alt="" />
             </div>
@@ -54,16 +54,16 @@ const Productdetail = () => {
               <img src={Keyboard} alt="" />
             </div>
           </div>
-          <div className="w-[80%] flex ">
-            <img src={Keyboard} alt="" className="" />
+          <div className="w-[80%] flex justify-center h-full items-center ">
+            <img src={Keyboard} alt="" className="w-[90%] h-[60%]" />
           </div>
         </div>
         <div className='w-full block sm:hidden'>
           <ImageScroller images={images}/>
         </div>
     
-        <div className="w-full sm:w-[40%] flex flex-col gap-5">
-          <p className="text-3xl font-semibold">Havic HV G-92 Gamepad</p>
+        <div className="w-full sm:w-[40%] flex flex-col gap-5 mt-[5%]">
+          <p className="text-2xl sm:text-3xl font-semibold">Havic HV G-92 Gamepad</p>
           
           
           <p className="text-xl font-semibold">$192</p>
@@ -95,9 +95,9 @@ const Productdetail = () => {
             </div>
           </div>
         </div>
-      </div>
-      
-      <div className=" grid grid-cols-2 sm:flex justify-between  mt-[4%] gap-2 px-[1%]">
+        
+       </div>
+       <div className=" grid grid-cols-2 sm:flex justify-between  mt-[4%] gap-2 px-[1%]">
         {data1.slice(0,8).map((data) => (
           <Card props={data} className='flex'/>
         ))}
@@ -105,7 +105,9 @@ const Productdetail = () => {
       <div className='App'>
      
     </div>
-         
+      </div>
+      
+      
     </div>
   );
 }

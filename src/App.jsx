@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Productdetail from './pages/Productdetail'
 import Cart from './pages/Cart'
 import Phonesidebar from './components/Phonesidebar'
+import Billingdetails from './pages/Billingdetails'
 
 function App() {
  
@@ -15,6 +16,7 @@ function App() {
     <Route path='/productdetail/:id' element={<Productdetail/>}/>
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/phonesidebar' element={<Phonesidebar/>}/>
+    <Route path='/billingdetails' element={<Billingdetails/>}/>
   </Routes>
   </>
   )

@@ -1,7 +1,8 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import {useSelector} from 'react-redux'
 import Navbar from '../components/Navbar'
 import Keyboard from '../assets/keyboard.png'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
     
@@ -61,13 +62,19 @@ const Cart = () => {
                         <p>{totalPrice}</p>
                         </div>
                         <div className=' justify-center hidden sm:flex'>
-                        <button className='text-white bg-red-500 px-[4%] py-[2%] '>Proceed to Checkout</button>
+                        <Link to="/billingdetails">   
+                        <div className='flex w-full'>
+                        <button className='text-white bg-red-500 w-full py-[5%] px-1'>Proceed to Checkout</button>
+                        </div>
+                        </Link>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='mt-[10%] justify-center items-center w-full flex sm:hidden'>
+            
             <button className='w-[80%] text-white rounded-xl bg-red-500 px-[4%] py-[2%] '>Proceed to Checkout</button>
+            
             </div>
             </div>
             

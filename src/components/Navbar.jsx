@@ -59,7 +59,7 @@ const Navbar = () => {
   
    {load?(
         <div className='w-full h-[10%] mb-[10%] justify-between items-center pb-[2%] pt-[2%] border-b-2 px-[5%] flex sm:hidden'>
-        <div className='w-[20%]  text-2xl font-semibold flex justify-center items-center'>
+        <div className='w-[50%]  text-2xl font-semibold '>
         Exclusive
       </div>
         <IoReorderThreeOutline size={40} onClick={Load}/>

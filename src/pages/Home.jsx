@@ -70,7 +70,7 @@ const Home = () => {
      <Navbar/> 
      </div>
      <div className='w-full  flex h-[20%]  md:px-[8%] md:p-[0.25%]'>
-        <div className='w-full sm:w-[20%] sm:border-r-2 flex flex-col items-end pt-[2%] px-[10%] sm:px-[0%] '>
+        <div className='w-full sm:w-[20%] sm:border-r-2 flex flex-col items-end sm:pt-[2%] px-[10%] sm:px-[0%] mb-[5%] sm:mb-2 '>
              <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
                 <p className='text-lg text-start font-semibold'>Women's Collection</p>
                 <FaChevronRight/>
@@ -128,10 +128,10 @@ const Home = () => {
      }
      
      </div>
-     <div className='w-screen flex justify-center mt-[10%] sm:my-[2%] border-b-2 pb-[4%]'>
+     <div className='w-screen flex justify-center mt-[10%] sm:my-[2%] sm:border-b-2 pb-[4%]'>
         <button className='bg-red-500 sm:px-[1%] px-[2%] py-[1%] sm:py-[0.5%] text-white'>View All Products</button>
      </div>
-     <p className='text-4xl font-semibold pl-[6%]'>
+     <p className='text-2xl text-center sm:text-start sm:text-3xl md:text-4xl font-semibold pl-[6%] my-[5%] sm:my-0'>
         Browse By Category
      </p>
      <div className='sm:flex grid grid-cols-3 gap-2  sm:flex-row items-center justify-between px-[6%] my-[2%]'>
@@ -173,21 +173,21 @@ const Home = () => {
         </div>
      </div>
      <div className='px-[6%] flex justify-between w-full my-[10%] sm:mx-[0%]'>
-        <p className='sm:text-4xl text-2xl font-semibold'>Best Selling Products</p>
+        <p className='sm:text-4xl text-xl font-semibold'>Best Selling Products</p>
         <button className='sm:px-[2%] px-[5%] py-[2%] sm:py-[1%] bg-red-500 text-white'>View All</button>
      </div>
-     <div className='  sm:flex px-[4%] sm:px-[0%] sm:pr-[8%] overflow-x-visible my-[2%]  sm:gap-[10%] w-full  grid grid-cols-2   justify-center items-center'>
+     <div className='  sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2  sm:gap-[10%] w-full  grid grid-cols-2 '>
         {
             data1.slice(0,8).map((data)=>(
                 <Card props={data}/>
             ))
         }
      </div>
-     <div className='w-full px-[6%] my-[10%] sm:my-[4%]'>
+     <div className='w-full px-[1%] sm:px-[6%] my-[10%] sm:my-[4%]'>
         <img src={Speaker} alt=''/>
      </div>
      <div className='px-[6%] flex justify-between'>
-        <p className='sm:text-4xl text-2xl font-semibold'>Explore All Products</p>
+        <p className='sm:text-4xl text-xl font-semibold'>Explore All Products</p>
         <button className='px-[2%] py-[1%] bg-red-500 text-white'>View All</button>
      </div>
      <div className='sm:grid-cols-4  mt-[4%] px-[6%]  grid grid-cols-2 '>

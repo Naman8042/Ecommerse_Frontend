@@ -29,7 +29,7 @@ const Card = ({props}) => {
         <p className='text-red-500 text-center'>{props.price}</p>
         <div className='flex justify-center'>
         <button
-          className='block  bg-black text-white text-sm py-[1%] w-[70%]  '
+          className='block sm:hidden bg-black text-white text-sm py-[1%] w-[70%]  '
           onClick={() => dispatch(addtoCart(props))}
         >
           Add to Cart
