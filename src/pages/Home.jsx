@@ -83,6 +83,34 @@ const Home = () => {
                 <p className='text-lg font-semibold'>Kids's Collection</p>
                 <FaChevronRight/>
              </div>
+             <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
+                <p className='text-lg font-semibold'>Electronics</p>
+                <FaChevronRight/>
+             </div>
+             <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
+                <p className='text-lg font-semibold'>Home & Lifestyle</p>
+                <FaChevronRight/>
+             </div>
+             <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
+                <p className='text-lg font-semibold'>Medicines</p>
+                <FaChevronRight/>
+             </div>
+             <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
+                <p className='text-lg font-semibold'>Sports & Outdoor</p>
+                <FaChevronRight/>
+             </div>
+             <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
+                <p className='text-lg font-semibold'>Baby's & Toys</p>
+                <FaChevronRight/>
+             </div>
+             <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
+                <p className='text-lg font-semibold'>Grocies & Pets</p>
+                <FaChevronRight/>
+             </div>
+             <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
+                <p className='text-lg font-semibold'>Health & Beauty</p>
+                <FaChevronRight/>
+             </div>
         </div>
         <div className='hidden sm:block w-[80%] pt-[2%]  pl-[2%]'>
           <img src={Photo} alt='' className='w-[99%] h-full'/>
