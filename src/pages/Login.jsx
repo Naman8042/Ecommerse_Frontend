@@ -6,7 +6,7 @@ const Login = () => {
   async function Login(){
     try{
       const { data } = await axios.post(
-        `https://deploy-lej8.onrender.com/api/v1/login`,
+        "https://deploy-lej8.onrender.com/api/v1/login",
         {
           email:"naman@gmail.com",
           password:"123",
@@ -17,7 +17,8 @@ const Login = () => {
           },
           withCredentials: true,
         }
-      );
+      )
+      .then((res)=>console.log(res))
     }
     catch(err){
       console.log(err)

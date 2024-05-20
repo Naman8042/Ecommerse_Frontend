@@ -6,7 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { IoReorderThreeOutline } from "react-icons/io5";
 import Phonesidebar from './Phonesidebar';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
   const navigate = useNavigate()
@@ -26,7 +26,7 @@ const Navbar = () => {
         <div>Home</div>
         <div>Contact</div>
         <div>About</div>
-        <div>Sign Up</div>
+        <div><Link to={"/login"}>Signup</Link></div>
       </div>
       <div className='flex gap-[5%] w-[40%] justify-center items-center'>
         <div className='w-[50%] flex items-center bg-gray-50 rounded-lg'>
