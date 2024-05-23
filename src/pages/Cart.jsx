@@ -11,7 +11,7 @@ const Cart = () => {
     for(let i=0;i<data.length;i++){
         totalPrice+=Number(data[i].price)
     }
-    console.log(totalPrice)
+  console.log(totalPrice)
   return (
     <div>
         <div className='h-[10%]'>

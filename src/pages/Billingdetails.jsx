@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState ,useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import {useSelector} from 'react-redux'
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
 
 const Billingdetails = () => {
+  const navigate = useNavigate()
+  const[login,setIsLogin] = useState(false)
+  useEffect(()=>{
+    const token  = Cookies.get('token')
+    if(token){
+      setIsLogin(true)
+    }
+    else{
+      navigate("/login")
+      setIsLogin(false)
+    }
+  },[])
   const data = useSelector((state) => state.counter.cart)
   console.log(data.length)
   return (

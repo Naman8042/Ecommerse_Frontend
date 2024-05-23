@@ -6,30 +6,41 @@ import { Rating } from 'react-simple-star-rating'
 import { useParams } from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import ImageScroller from '../components/ImageScroller';
-
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Productdetail = () => {
+  const navigate = useNavigate()
   const data = useSelector((state) => state.counter.value)
+  const[Data1,setData1] = useState({})
+  const {id} = useParams()
+
+  useEffect(()=>{
+    axios.post("http://localhost:4000/api/v1/getdetails",{id})
+    .then((res)=>setData1(res.data.data))
+    },[id])
+
+   const[Data,setData] = useState([])
+
+   useEffect(()=>{
+   axios.get("http://localhost:4000/api/v1/getall")
+   .then((res)=>setData(res.data.data))
+   },[])
   
   const [rating, setRating] = useState(0)
   const handleRating = (rate) => {
     setRating(rate)
   }
   const images = [
-    Keyboard,
-    Keyboard,
-    Keyboard,
-    Keyboard,
-    Keyboard,
+    Data1.imageUrl,
+    Data1.imageUrl,
+    Data1.imageUrl,
+    Data1.imageUrl,
+    Data1.imageUrl,
   ];
 
 
-  const data1=[
-    {name:"AK-900 Wired Keyboard",price:"120"},
-    {name:"AK-900 Wired Keyboard",price:"120"},
-    {name:"AK-900 Wired Keyboard",price:"120"},
-    {name:"AK-900 Wired Keyboard",price:"120"},
-  ]
+ 
   return (
     <div className=" overflow-x-hidden h-screen">
 
@@ -37,25 +48,25 @@ const Productdetail = () => {
         <Navbar />
       </div>
       <div className='h-[90%]'>
-      <div className="w-screen px-[10%]  h-[90%] overflow-x-auto flex flex-col sm:flex-row items-center justify-center gap-[5%]">
+      <div className="w-screen px-[10%] overflow-x-auto flex flex-col sm:flex-row items-center justify-center gap-[5%]">
         
         <div className="w-[60%] gap-5 hidden sm:flex h-screen">
           <div className="w-[20%] flex flex-col justify-center ">
             <div className="w-full p-[1%] my-[5%]">
-              <img src={Keyboard} alt="" />
+              <img src={Data1.imageUrl} alt="" />
             </div>
             <div className="w-full p-[1%] my-[5%]">
-              <img src={Keyboard} alt="" />
+              <img src={Data1.imageUrl} alt="" />
             </div>
             <div className="w-full p-[1%] my-[5%]">
-              <img src={Keyboard} alt="" />
+              <img src={Data1.imageUrl} alt="" />
             </div>
             <div className="w-full p-[1%] my-[5%]">
-              <img src={Keyboard} alt="" />
+              <img src={Data1.imageUrl} alt="" />
             </div>
           </div>
           <div className="w-[80%] flex justify-center h-full items-center ">
-            <img src={Keyboard} alt="" className="w-[90%] h-[60%]" />
+            <img src={Data1.imageUrl} alt="" className="w-[90%] h-[60%]" />
           </div>
         </div>
         <div className='w-full block sm:hidden'>
@@ -63,15 +74,12 @@ const Productdetail = () => {
         </div>
     
         <div className="w-full sm:w-[40%] flex flex-col gap-5 mt-[5%]">
-          <p className="text-2xl sm:text-3xl font-semibold">Havic HV G-92 Gamepad</p>
+          <p className="text-2xl sm:text-3xl font-semibold">{Data1.name}</p>
           
           
-          <p className="text-xl font-semibold">$192</p>
+          <p className="text-xl font-semibold">${Data1.price}</p>
           <p className="border-b-2 pb-[5%] border-black">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-            voluptatum a quibusdam distinctio ratione nulla quam suscipit?
-            Necessitatibus ducimus consectetur excepturi hic. Perspiciatis
-            libero minima qui iste enim dignissimos consequatur!
+            {Data1.description}
           </p>
           <div className="flex sm:flex-row flex-col w-full gap-5 sm:gap-1 items-center">
             <div className="w-[40%] sm:w-[50%] flex  items-center mx-[1%]">
@@ -97,9 +105,9 @@ const Productdetail = () => {
         </div>
         
        </div>
-       <div className=" grid grid-cols-2 sm:flex justify-between  mt-[4%] gap-2 px-[1%]">
-        {data1.slice(0,8).map((data) => (
-          <Card props={data} className='flex'/>
+       <div className=" sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2  sm:gap-[10%] w-full  grid grid-cols-2" >
+        {Data.slice(0,4).map((data) => (
+          <Card props={data} className='flex' />
         ))}
       </div>
       <div className='App'>
