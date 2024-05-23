@@ -20,10 +20,10 @@ const Home = () => {
    const [Data, setData] = useState([]);
    const [start, setStart] = useState(0);
    const [end, setEnd] = useState(4);
-   const [start1, setStart1] = useState(0);
-   const [end1, setEnd1] = useState(4);
-   const [start2, setStart2] = useState(0);
-   const [end2, setEnd2] = useState(4);
+   const [start1, setStart1] = useState(1);
+   const [end1, setEnd1] = useState(5);
+   const [start2, setStart2] = useState(2);
+   const [end2, setEnd2] = useState(6);
 
    useEffect(() => {
       axios.get("https://deploy-lej8.onrender.com/api/v1/getall")
@@ -53,11 +53,11 @@ const Home = () => {
    const { days, hours, minutes, seconds } = calculateTime(saleEndTime - Date.now());
 
    const increment = (val) => {
-      if (val===1 && end <= Data.length) {
+      if (val===1 && end1 <= Data.length) {
          setStart1(prevStart => prevStart + 1);
          setEnd1(prevEnd => prevEnd + 1);
       }
-      if (val===2 && end <= Data.length) {
+      if (val===2 && end2 <= Data.length) {
          setStart2(prevStart => prevStart + 1);
          setEnd2(prevEnd => prevEnd + 1);
       }
@@ -72,11 +72,11 @@ const Home = () => {
          setStart(prevStart => prevStart - 1);
          setEnd(prevEnd => prevEnd - 1);
       }
-      if (start > 0 && val===1) {
+      if (start1 > 0 && val===1) {
          setStart1(prevStart => prevStart - 1);
          setEnd1(prevEnd => prevEnd - 1);
       }
-      if (start > 0 && val==2) {
+      if (start2 > 0 && val==2) {
          setStart2(prevStart => prevStart - 1);
          setEnd2(prevEnd => prevEnd - 1);
       }
@@ -88,10 +88,10 @@ const Home = () => {
             <Navbar />
          </div>
          <div className='w-full flex sm:h-[70%] md:h-[90%] xl:px-[8%] sm:px-[2%] '>
-            <div className='cursor-pointer w-full sm:w-[30%] md:w-[20%] sm:h-[98%] sm:border-r-2 flex flex-col items-end sm:pt-[2%] px-[10%] sm:px-[0%] mb-[5%] sm:mb-2 '>
+            <div className='cursor-pointer w-full sm:w-[30%] lg:w-[20%] sm:h-[98%] sm:border-r-2 flex flex-col items-end sm:pt-[2%] px-[10%] sm:px-[0%] mb-[5%] sm:mb-2 '>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%] '>
-                  <p className='sm:text-base md:text-base lg:text-lg text-start font-semibold'>Women's Collection</p>
-                  <FaChevronRight />
+                  <p className='sm:text-base lg:text-lg text-start font-semibold'>Women's Collection</p>
+                  <FaChevronRight/>
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
                   <p className='sm:text-base md:text-base lg:text-lg  text-start font-semibold'>Men's Collection</p>
@@ -136,38 +136,38 @@ const Home = () => {
          </div>
          <div className='w-full flex justify-center items-center my-[2%] px-[8%] gap-4'>
             <div className='w-[1.5%] bg-red-600 text-red-600 py-[0.5%] rounded-md'>f</div>
-            <div className='w-[94.5%] text-red-600 font-semibold text-xl'>Today's</div>
+            <div className='w-[94.5%] text-red-600 font-semibold lg:text-xl'>Today's</div>
          </div>
          <div className='px-[4%] md:px-[8%] flex flex-col sm:flex-row gap-3 md:gap-[10%] w-full items-center sm:items-end my-[2%]'>
-            <h2 className='md:text-4xl text-xl font-semibold w-full sm:w-[20%] text-start px-[4%] sm:px-[0%]'>Flash Sales</h2>
-            <div className='flex sm:items-end gap-4 w-full justify-center sm:justify-start'>
+            <h2 className='lg:text-4xl text-xl font-semibold w-full sm:w-[20%]  text-start px-[4%] sm:px-[0%]'>Flash Sales</h2>
+            <div className='flex sm:items-end gap-4 w-full  sm-[w-80%]  justify-start px-[4%]'>
                <div>
-                  <p className='text-center md:text-xl font-semibold'>Days</p>
-                  <p className='text-center text-xl font-semibold md:text-5xl'>{days}</p>
+                  <p className='text-center text-xl   font-semibold'>Days</p>
+                  <p className='text-center text-xl font-semibold md:text-2xl lg:text-5xl'>{days}</p>
                </div>
                <p className='text-red-600 text-4xl'>:</p>
                <div>
                   <p className='text-center md:text-xl font-semibold'>Hours</p>
-                  <p className='text-center text-xl font-semibold md:text-5xl'>{hours}</p>
+                  <p className='text-center text-xl md:text-2xl lg:text-5xl font-semibold '>{hours}</p>
                </div>
                <p className='text-red-600 text-4xl'>:</p>
                <div>
                   <p className='text-center md:text-xl font-semibold'>Minutes</p>
-                  <p className='text-center text-xl font-semibold md:text-5xl'>{minutes}</p>
+                  <p className='text-center text-xl md:text-2xl lg:text-5xl font-semibold '>{minutes}</p>
                </div>
                <p className='text-red-600 text-4xl'>:</p>
                <div>
                   <p className='text-center md:text-xl font-semibold'>Seconds</p>
-                  <p className='text-center text-xl font-semibold md:text-5xl'>{seconds}</p>
+                  <p className='text-center text-xl md:text-2xl lg:text-5xl font-semibold '>{seconds}</p>
                </div>
             </div>
-            <div className='flex sm:w-[20%]  gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%] '>
-            <button onClick={()=>decrement(0)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8'/></button>
-            <button onClick={()=>increment(0)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>
+            <div className='hidden sm:flex sm:w-[20%]  gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%] '>
+            <button onClick={()=>decrement(0)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-7'/></button>
+            <button onClick={()=>increment(0)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-7'/></button>
             </div>
          </div>
          
-         <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[10%] w-full grid grid-cols-2'>
+         <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[5%] lg:gap-[6%] w-full grid grid-cols-2'>
             {
                Data.slice(start,end).map((data) => (
                   <Card key={data.id} props={data} />
@@ -221,7 +221,7 @@ const Home = () => {
          <div className='px-[6%] flex justify-between w-full my-[10%] sm:my-[5%] sm:mx-[0%]'>
             <p className='sm:text-4xl text-xl font-semibold  w-[80%] '>Best Selling Products</p>
             
-            <div className='flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
+            <div className='hidden sm:flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
               
             <button onClick={()=>decrement(1)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8' /></button>
             <button onClick={()=>increment(1)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>
@@ -229,7 +229,7 @@ const Home = () => {
             </div>
          </div>
          
-         <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[10%] w-full grid grid-cols-2'>
+         <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[6%] w-full grid grid-cols-2'>
             {
                Data.slice(start1, end1).map((data) => (
                   <Card key={data.id} props={data} />
@@ -241,7 +241,7 @@ const Home = () => {
          </div>
          <div className='px-[6%] flex justify-between'>
             <p className='sm:text-4xl font-semibold w-[80%] text-xl'>Explore All Products</p>
-            <div className='flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
+            <div className='hidden sm:flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
               
             <button onClick={()=>decrement(2)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8' /></button>
             <button onClick={()=>increment(2)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>
@@ -249,7 +249,7 @@ const Home = () => {
             </div>
          </div>
          
-         <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[10%] w-full grid grid-cols-2'>
+         <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[6%] w-full grid grid-cols-2'>
             {
                Data.slice(start2, end2).map((data) => (
                   <Card key={data.id} props={data} />

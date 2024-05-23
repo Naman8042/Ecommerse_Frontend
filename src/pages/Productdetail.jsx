@@ -49,7 +49,7 @@ const Productdetail = () => {
         <Navbar />
       </div>
       <div className='h-[90%]'>
-      <div className="w-screen px-[10%] overflow-x-auto flex flex-col sm:flex-row items-center justify-center gap-[5%]">
+      <div className="w-screen lg:px-[10%] sm:px-[4%] px-7 overflow-x-auto flex flex-col sm:flex-row items-center justify-center gap-[5%]">
         
         <div className="w-[60%] gap-5 hidden sm:flex h-screen">
           <div className="w-[20%] flex flex-col justify-center ">
@@ -83,8 +83,8 @@ const Productdetail = () => {
             {Data1.description}
           </p>
           <Rating name="read-only" value={value} readOnly/>
-          <div className="flex sm:flex-row flex-col w-full gap-5 sm:gap-1 items-center">
-            <div className="w-[40%] sm:w-[50%] flex  items-center mx-[1%]">
+          <div className="flex  sm:flex-row flex-col w-full gap-5 sm:gap-1 items-center justify-center">
+            <div className="sm:w-full w-[85%] flex  items-center mx-[1%] justify-center">
               <button className="w-[25%] sm:w-[20%] p-[1%] border-2 text-2xl border-collapse border-gray-500 text-center">
                 +
               </button>
@@ -96,19 +96,20 @@ const Productdetail = () => {
               </button>
             </div>
             
-            <div className="w-full flex flex-col sm:flex-row gap-4">
-              <button className="w-full rounded-2xl sm:w-[50%] py-[2%]  text-xl border-collapse bg-red-700 text-white text-center">
+            
+          </div>
+          <div className="w-full flex flex-col sm:flex-row gap-4  justify-center items-center ">
+              <button className="bg-red-500 w-[85%] sm:w-[40%] p-[2%]   rounded-xl text-white ">
                 Buy Now
               </button>
-              <button className="w-full rounded-2xl sm:w-[50%] py-[2%]  text-xl border-collapse bg-red-700 text-white text-center">
+              <button className="bg-red-500 w-[85%] sm:w-[45%] p-[2%]   rounded-xl text-white">
                 Add to Cart
               </button>
             </div>
-          </div>
         </div>
         
        </div>
-       <div className=" sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2  sm:gap-[10%] w-full  grid grid-cols-2" >
+       <div className="  sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2  sm:gap-[10%] w-full  grid grid-cols-2" >
         {Data.slice(0,4).map((data) => (
           <Card props={data} className='flex' />
         ))}

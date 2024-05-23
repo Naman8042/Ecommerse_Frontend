@@ -1,9 +1,9 @@
 import React from 'react'
-import { BsBank } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa6";
-import { BiSolidDashboard } from "react-icons/bi";
-import { RiLinksFill } from "react-icons/ri";
-import { VscNotebook } from "react-icons/vsc";
+import { IoMdHome } from "react-icons/io";
+import { CiLogin } from "react-icons/ci";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useNavigate ,Link} from 'react-router-dom';
 
@@ -23,8 +23,8 @@ const Phonesidebar = ({}) => {
       <div className='w-full flex flex-col items-center text-xl border-seperate '>
       <div className='w-[90%]  my-[1%] py-[4%] px-[10%] flex justify-evenly border-b-2'>
       <div className='flex w-[90%] gap-3 justify- items-center'>
-      <BiSolidDashboard/>
-      <p className='text-xl'>My Dashboard</p>
+      <IoMdHome/>
+      <p className='text-xl'>Home</p>
       </div>
       <div className='w-[10%] flex justify-center items-center '>
       <FaAngleRight />  
@@ -32,8 +32,8 @@ const Phonesidebar = ({}) => {
       </div>
       <div className='w-[90%]  my-[1%] py-[4%] px-[10%] flex justify-evenly border-b-2'>
       <div className='flex w-[90%] gap-3 justify- items-center'>
-      <RiLinksFill/>
-      <p className='text-xl'>TOTM Links</p>
+      <CiLogin/>
+      <p className='text-xl'>Login</p>
       </div>
       <div className='w-[10%] flex justify-center items-center'>
       <FaAngleRight />  
@@ -41,7 +41,7 @@ const Phonesidebar = ({}) => {
       </div>
       <div className='w-[90%]  my-[1%] py-[4%] px-[10%] flex justify-evenly border-b-2'>
       <Link className='flex w-[90%] gap-3 justify- items-center' to="/cart">
-      <VscNotebook/>
+      <MdOutlineShoppingCart/>
       <p className='text-xl'>My Cart</p>
       </Link>
       <div className='w-[10%] flex justify-center items-center'>
@@ -50,8 +50,8 @@ const Phonesidebar = ({}) => {
       </div>
       <div className='w-[90%]  my-[1%] py-[4%] px-[10%] flex justify-evenly border-b-2'>
       <div className='flex w-[90%] gap-3 justify- items-center'>
-      <BsBank/>
-      <p className='text-xl'>Bank Details</p>
+      <FaUserCircle/>
+      <p className='text-xl'>Manage My Accounts</p>
       </div>
       <div className='w-[10%] flex justify-center items-center'>
       <FaAngleRight />  
@@ -61,7 +61,7 @@ const Phonesidebar = ({}) => {
       <div className='sm:block hidden'>
        <div className='w-[90%]  my-[1%] py-[4%] px-[10%] flex justify-evenly'>
       <div className='flex w-[90%] gap-3 justify- items-center'>
-      <BsBank/>
+      <FaUserCircle/>
       <p className='text-xs md:text-base lg:text-xl sd:text-sm'>Bank Details</p>
       </div>
       <div className='w-[10%] flex justify-center items-center'>

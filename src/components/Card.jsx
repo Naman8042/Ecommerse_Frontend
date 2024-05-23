@@ -21,7 +21,7 @@ const Card = ({props}) => {
     ProductName = props.name
   }
   return (
-    <div className='items-center w-full sm:w-96  sm:h-88  flex flex-col justify-center  sm:hover:shadow-2xl ' >
+    <div className='items-center w-full sm:w-96  sm:h-88  flex flex-col justify-center  sm:hover:shadow-2xl p-[1%]' >
       <div className='w-full sm:w-80 flex flex-col items-center relative 'onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>
         <img src={props.imageUrl} alt="" className='w-48 h-48 md:w-64 md:h-64' 

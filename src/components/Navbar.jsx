@@ -32,11 +32,11 @@ const Navbar = () => {
   }
   return (
       <div className='w-full ' onMouseLeave={()=>setShowDropdown(false)}>
-      <div className='relative hidden sm:flex justify-between w-screen py-[1%] border-b-2  md:h-[12%] sm:px-[4%] md:px-[6%] bg-white'>
+      <div className='relative hidden sm:flex justify-between w-screen py-[1%] border-b-2  md:h-[12%] sm:px-[4%] lg:px-[6%] bg-white'>
       <div className=' sm:w-[15%] md:w-[20%] sm:text-xl md:text-2xl font-bold flex justify-center items-center'>
         Exclusive
       </div>
-      <div className='flex sm:gap-[5%] md:gap-[10%] justify-center w-[40%] sm:text-base md:text-lg items-center font-semibold'>
+      <div className='flex sm:gap-[5%] md:gap-[10%] justify-center w-[40%] sm:text-base lg:text-lg items-center font-semibold'>
         <div className='cursor-pointer'><Link to={"/"}>Home</Link></div>
         <div className='cursor-pointer'>Contact</div>
         <div className='cursor-pointer'>About</div>
@@ -45,13 +45,13 @@ const Navbar = () => {
       <div className='flex gap-[5%] w-[40%] justify-center items-center'>
         <div className='w-[50%] flex items-center bg-gray-50 rounded-lg'>
         <input type='text' placeholder='What are you looking for?' className='w-[90%] bg-gray-50 outline-none p-[3%] rounded-lg sm:text-base md:text-base '/>
-        <CiSearch  className='md:size-8 sm:size-6' />
+        <CiSearch  className='md:size-6 sm:size-6 lg:size-8' />
         </div>
-        <FaRegHeart  className='md:size-8 sm:size-6'/>
-        <Link to={"/cart"}><MdOutlineShoppingCart size={30} className='md:size-8 sm:size-6'/></Link>
+        <FaRegHeart  className='md:size-6 sm:size-6 lg:size-8'/>
+        <Link to={"/cart"}><MdOutlineShoppingCart className='md:size-6 sm:size-6 lg:size-8'/></Link>
         {
           isLogin?(
-            <FaUserCircle  onClick={(e)=>setShowDropdown(true)} className='md:size-8 sm:size-6' />
+            <FaUserCircle  onClick={(e)=>setShowDropdown(true)} className='md:size-6 sm:size-6 lg:size-8' />
           ):(
             <>
             </>
@@ -61,7 +61,7 @@ const Navbar = () => {
     </div>
    {
     showDropdown?(
-      <div className='absolute md:left-[82%] sm:left-[70%] bg-gray-100 sm:w-[25%] md:w-[13%] sm:text-sm md:text-xl '>
+      <div className='absolute md:left-[82%] sm:left-[70%] bg-gray-100 sm:w-[25%] md:w-[17%] lg:w-[13%] sm:text-sm lg:text-xl '>
       <p className='px-[3%] py-[2%]'>Manage My Accounts</p>
       <p className='px-[3%] py-[2%]'>My Orders</p>
     </div>
