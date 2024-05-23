@@ -2,28 +2,29 @@ import React,{useState,useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import Keyboard from '../assets/keyboard.png'
 import Card from '../components/Card'
-import { Rating } from 'react-simple-star-rating'
 import { useParams } from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import ImageScroller from '../components/ImageScroller';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Rating from '@mui/material/Rating';
 
 const Productdetail = () => {
+  const[value,setValue] = useState(3)
   const navigate = useNavigate()
   const data = useSelector((state) => state.counter.value)
   const[Data1,setData1] = useState({})
   const {id} = useParams()
 
   useEffect(()=>{
-    axios.post("http://localhost:4000/api/v1/getdetails",{id})
+    axios.post("https://deploy-lej8.onrender.com/api/v1/getdetails",{id})
     .then((res)=>setData1(res.data.data))
     },[id])
 
    const[Data,setData] = useState([])
 
    useEffect(()=>{
-   axios.get("http://localhost:4000/api/v1/getall")
+   axios.get("https://deploy-lej8.onrender.com/api/v1/getall")
    .then((res)=>setData(res.data.data))
    },[])
   
@@ -81,6 +82,7 @@ const Productdetail = () => {
           <p className="border-b-2 pb-[5%] border-black">
             {Data1.description}
           </p>
+          <Rating name="read-only" value={value} readOnly/>
           <div className="flex sm:flex-row flex-col w-full gap-5 sm:gap-1 items-center">
             <div className="w-[40%] sm:w-[50%] flex  items-center mx-[1%]">
               <button className="w-[25%] sm:w-[20%] p-[1%] border-2 text-2xl border-collapse border-gray-500 text-center">
@@ -93,6 +95,7 @@ const Productdetail = () => {
                 -
               </button>
             </div>
+            
             <div className="w-full flex flex-col sm:flex-row gap-4">
               <button className="w-full rounded-2xl sm:w-[50%] py-[2%]  text-xl border-collapse bg-red-700 text-white text-center">
                 Buy Now

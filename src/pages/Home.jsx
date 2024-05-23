@@ -26,7 +26,7 @@ const Home = () => {
    const [end2, setEnd2] = useState(4);
 
    useEffect(() => {
-      axios.get("http://localhost:4000/api/v1/getall")
+      axios.get("https://deploy-lej8.onrender.com/api/v1/getall")
          .then((res) => setData(res.data.data));
    }, []);
 
@@ -84,53 +84,53 @@ const Home = () => {
 
    return (
       <div className='w-screen h-screen overflow-x-hidden overflow-y-scroll '>
-         <div className='h-[10%]'>
+         <div className='md:h-[8%] sm:h-[7%]'>
             <Navbar />
          </div>
-         <div className='w-full flex sm:h-[90%] md:px-[8%]'>
-            <div className='w-full sm:w-[20%] sm:h-[98%] sm:border-r-2 flex flex-col items-end sm:pt-[2%] px-[10%] sm:px-[0%] mb-[5%] sm:mb-2 '>
+         <div className='w-full flex sm:h-[70%] md:h-[90%] xl:px-[8%] sm:px-[2%] '>
+            <div className='cursor-pointer w-full sm:w-[30%] md:w-[20%] sm:h-[98%] sm:border-r-2 flex flex-col items-end sm:pt-[2%] px-[10%] sm:px-[0%] mb-[5%] sm:mb-2 '>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%] '>
-                  <p className='text-lg text-start font-semibold'>Women's Collection</p>
+                  <p className='sm:text-base md:text-base lg:text-lg text-start font-semibold'>Women's Collection</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg text-start font-semibold'>Men's Collection</p>
+                  <p className='sm:text-base md:text-base lg:text-lg  text-start font-semibold'>Men's Collection</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Kids's Collection</p>
+                  <p className='sm:text-base md:text-base xl:text-lg  font-semibold'>Kids's Collection</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Electronics</p>
+                  <p className='ssm:text-base md:text-base xl:text-lg  font-semibold'>Electronics</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Home & Lifestyle</p>
+                  <p className='sm:text-base md:text-base xl:text-lg  font-semibold'>Home & Lifestyle</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Medicines</p>
+                  <p className='sm:text-base md:text-base xl:text-lg  font-semibold'>Medicines</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Sports & Outdoor</p>
+                  <p className='sm:text-base md:text-base lg:text-lg  font-semibold'>Sports & Outdoor</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Baby's & Toys</p>
+                  <p className='sm:text-base md:text-base xl:text-lg  font-semibold'>Baby's & Toys</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Grocies & Pets</p>
+                  <p className='sm:text-base md:text-base xl:text-lg  font-semibold'>Grocies & Pets</p>
                   <FaChevronRight />
                </div>
                <div className='flex items-center justify-between w-full py-[2%] pr-[8%]'>
-                  <p className='text-lg font-semibold'>Health & Beauty</p>
+                  <p className='sm:text-base md:text-base xl:text-lg  font-semibold'>Health & Beauty</p>
                   <FaChevronRight />
                </div>
             </div>
-            <div className='hidden sm:block w-[80%] pt-[2%] pl-[2%] sm:h-full'>
+            <div className='hidden sm:block sm:w-[70%] md:w-[80%] pt-[2%] pl-[2%] sm:h-full'>
                <img src={Photo} alt='' className='w-[99%] h-[98%]' />
             </div>
          </div>
@@ -140,7 +140,7 @@ const Home = () => {
          </div>
          <div className='px-[4%] md:px-[8%] flex flex-col sm:flex-row gap-3 md:gap-[10%] w-full items-center sm:items-end my-[2%]'>
             <h2 className='md:text-4xl text-xl font-semibold w-full sm:w-[20%] text-start px-[4%] sm:px-[0%]'>Flash Sales</h2>
-            <div className='flex items-end gap-4 w-[60%]'>
+            <div className='flex sm:items-end gap-4 w-full justify-center sm:justify-start'>
                <div>
                   <p className='text-center md:text-xl font-semibold'>Days</p>
                   <p className='text-center text-xl font-semibold md:text-5xl'>{days}</p>
@@ -161,70 +161,70 @@ const Home = () => {
                   <p className='text-center text-xl font-semibold md:text-5xl'>{seconds}</p>
                </div>
             </div>
-            <div className='flex w-[20%]  gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
-            <button onClick={()=>decrement(0)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft size={35}/></button>
-            <button onClick={()=>increment(0)} className=' px-[1%] py-[1%]'><FaCircleChevronRight size={35}/></button>
+            <div className='flex sm:w-[20%]  gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%] '>
+            <button onClick={()=>decrement(0)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8'/></button>
+            <button onClick={()=>increment(0)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>
             </div>
          </div>
          
          <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[10%] w-full grid grid-cols-2'>
             {
-               Data.slice(start, end).map((data) => (
+               Data.slice(start,end).map((data) => (
                   <Card key={data.id} props={data} />
                ))
             }
          </div>
-         <div className='w-screen flex justify-center mt-[10%] sm:my-[2%] sm:border-b-2 pb-[4%]'>
+         <div className=' w-screen flex justify-center mt-[10%] sm:my-[2%] sm:border-b-2 pb-[4%]'>
             <button className='bg-red-500 sm:px-[1%] px-[2%] py-[1%] sm:py-[0.5%] text-white'>View All Products</button>
          </div>
          <p className='text-2xl text-center sm:text-start sm:text-3xl md:text-4xl font-semibold pl-[6%] my-[5%] sm:my-0'>
             Browse By Category
          </p>
-         <div className='sm:flex grid grid-cols-3 gap-2 sm:flex-row items-center justify-between px-[6%] my-[2%]'>
+         <div className='  grid grid-cols-3 gap-2 xl:flex flex-row items-center justify-between px-[6%] my-[2%]'>
             <div className='flex flex-col items-center border-2 py-[4%] sm:py-[2%] sm:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
                <div>
-                  <FaMobile className='size-12 sm:size-24' />
+                  <FaMobile className='size-12 md:size-24' />
                </div>
                <p className='sm:text-xl text-base'>Phones</p>
             </div>
-            <div className='flex flex-col items-center border-2 px-[8%] py-[4%] md:py-[2%] md:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
+            <div className='flex flex-col items-center border-2 py-[4%] sm:py-[2%] sm:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
                <div>
-                  <HiComputerDesktop className='size-12 sm:size-24' />
+                  <HiComputerDesktop className='size-12 md:size-24' />
                </div>
                <p className='sm:text-xl text-base'>Computers</p>
             </div>
-            <div className='flex flex-col items-center border-2 gap-2 px-[8%] py-[4%] md:py-[2%] md:px-[4%] hover:bg-red-400 hover:text-white'>
+            <div className='flex flex-col items-center border-2 py-[4%] sm:py-[2%] sm:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
                <div>
-                  <BsSmartwatch className='size-12 sm:size-24' />
+                  <BsSmartwatch className='size-12 md:size-24' />
                </div>
                <p className='sm:text-xl text-base'>SmartWatch</p>
             </div>
-            <div className='flex flex-col items-center border-2 gap-2 px-[8%] py-[4%] md:py-[2%] md:px-[4%] hover:bg-red-400 hover:text-white'>
+            <div className='flex flex-col items-center border-2 py-[4%] sm:py-[2%] sm:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
                <div>
-                  <FaCamera className='size-12 sm:size-24' />
+                  <FaCamera className='size-12 md:size-24' />
                </div>
                <p className='sm:text-xl text-base'>Camera</p>
             </div>
-            <div className='flex flex-col items-center border-2 px-[8%] py-[4%] md:py-[2%] md:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
+            <div className='flex flex-col items-center border-2 py-[4%] sm:py-[2%] sm:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
                <div>
-                  <FaHeadphones className='size-12 sm:size-24' />
+                  <FaHeadphones className='size-12 md:size-24' />
                </div>
                <p className='sm:text-xl text-base'>HeadPhones</p>
             </div>
-            <div className='flex flex-col items-center border-2 px-[8%] py-[4%] md:py-[2%] md:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
+            <div className='flex flex-col items-center border-2 py-[4%] sm:py-[2%] sm:px-[4%] gap-2 hover:bg-red-400 hover:text-white'>
                <div>
-                  <BiSolidJoystick className='size-12 sm:size-24' />
+                  <BiSolidJoystick className='size-12 md:size-24' />
                </div>
                <p className='sm:text-xl text-base'>Gaming</p>
             </div>
          </div>
          <div className='px-[6%] flex justify-between w-full my-[10%] sm:my-[5%] sm:mx-[0%]'>
-            <p className='sm:text-4xl text-xl font-semibold'>Best Selling Products</p>
+            <p className='sm:text-4xl text-xl font-semibold  w-[80%] '>Best Selling Products</p>
             
-            <div className='flex w-[40%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
+            <div className='flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
               
-            <button onClick={()=>decrement(1)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft size={35} /></button>
-            <button onClick={()=>increment(1)} className=' px-[1%] py-[1%]'><FaCircleChevronRight size={35}/></button>
+            <button onClick={()=>decrement(1)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8' /></button>
+            <button onClick={()=>increment(1)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>
             {/* <button className='sm:px-[5%] px-[5%] py-[2%] sm:py-[2%] bg-red-500 text-white'>View All</button> */}
             </div>
          </div>
@@ -240,11 +240,11 @@ const Home = () => {
             <img src={Speaker} alt='' />
          </div>
          <div className='px-[6%] flex justify-between'>
-            <p className='sm:text-4xl text-xl font-semibold'>Explore All Products</p>
-            <div className='flex w-[40%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
+            <p className='sm:text-4xl font-semibold w-[80%] text-xl'>Explore All Products</p>
+            <div className='flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
               
-            <button onClick={()=>decrement(2)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft size={35} /></button>
-            <button onClick={()=>increment(2)} className=' px-[1%] py-[1%]'><FaCircleChevronRight size={35}/></button>
+            <button onClick={()=>decrement(2)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8' /></button>
+            <button onClick={()=>increment(2)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>
             {/* <button className='sm:px-[5%] px-[5%] py-[2%] sm:py-[2%] bg-red-500 text-white'>View All</button> */}
             </div>
          </div>

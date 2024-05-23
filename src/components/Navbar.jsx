@@ -37,10 +37,10 @@ const Navbar = () => {
         Exclusive
       </div>
       <div className='flex sm:gap-[5%] md:gap-[10%] justify-center w-[40%] sm:text-base md:text-lg items-center font-semibold'>
-        <div><Link to={"/"}>Home</Link></div>
-        <div>Contact</div>
-        <div>About</div>
-        <div><Link to={"/login"}>Signup</Link></div>
+        <div className='cursor-pointer'><Link to={"/"}>Home</Link></div>
+        <div className='cursor-pointer'>Contact</div>
+        <div className='cursor-pointer'>About</div>
+        <div className='cursor-pointer'><Link to={"/login"}>Signup</Link></div>
       </div>
       <div className='flex gap-[5%] w-[40%] justify-center items-center'>
         <div className='w-[50%] flex items-center bg-gray-50 rounded-lg'>

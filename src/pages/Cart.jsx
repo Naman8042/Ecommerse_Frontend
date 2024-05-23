@@ -36,9 +36,9 @@ const Cart = () => {
                         
                     <div className='flex flex-col sm:flex-row justify-between text-base sm:text-xl border-b-2 sm:border-2 p-[1%] rounded-xl my-[2%]'>
                     <div className='w-full sm:w-[25%] text-start sm:text-center'>{data.name}</div>
-                    <div className='w-full hidden sm:block sm:w-[25%] text-start sm:text-center'>{data.price}</div>
+                    <div className='w-full hidden sm:block sm:w-[25%] text-start sm:text-center'>${data.price}</div>
                     <div className='w-full sm:w-[25%] text-start sm:text-center'>1</div>
-                    <div className='w-full font-bold sm:w-[25%] text-start sm:text-center'>{data.price}</div>
+                    <div className='w-full font-bold sm:w-[25%] text-start sm:text-center'>${data.price}</div>
                     </div>
                     ))
                 }
@@ -51,7 +51,7 @@ const Cart = () => {
                         <p className='px-[2%] text-lg'>Cart Total</p>
                         <div className='flex justify-between px-[2%] text-lg'>
                         <p>Total : </p>
-                        <p>{totalPrice}</p>
+                        <p>${totalPrice}</p>
                         </div>
                         <div className='flex justify-between px-[2%] text-lg'>
                         <p>Shipping : </p>
@@ -59,7 +59,7 @@ const Cart = () => {
                         </div>
                         <div className='flex justify-between px-[2%] text-lg'>
                         <p>Total : </p>
-                        <p>{totalPrice}</p>
+                        <p>${totalPrice}</p>
                         </div>
                         <div className=' justify-center hidden sm:flex'>
                         <Link to="/billingdetails">   
@@ -80,8 +80,19 @@ const Cart = () => {
             
               
         ):(
-            <div>
-                No items in Cart
+            <div className='px-[8%]'>
+                <p className='text-xl font-bold my-[1%]'>My Cart</p>
+                <div className='hidden sm:flex justify-between text-xl border-2 p-[1%] rounded-xl'>
+                
+                    <div className='w-[25%] text-center'>Product Name</div>
+                    <div className='w-[25%] text-center'>Price</div>
+                    <div className='w-[25%] text-center'>Quantity</div>
+                    <div className='w-[25%] text-center'>Subtotal</div>
+
+                </div>
+                <div className='text-2xl w-full text-center my-[2%]'>
+                    No Items In Cart
+                </div>  
             </div>
         )
       }
