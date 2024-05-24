@@ -11,7 +11,10 @@ const Card = ({props}) => {
   const [isHovered, setIsHovered] = useState(false);
   const dispatch = useDispatch()
   function naviagteHandler(){
-    navigate(`/productdetail/${props._id}`)
+    if(isHovered===false){
+      navigate(`/productdetail/${props._id}`)
+    }
+    
   }
   var ProductName ;
   if(props.name.length>20){
@@ -21,10 +24,10 @@ const Card = ({props}) => {
     ProductName = props.name
   }
   return (
-    <div className='items-center w-full sm:w-96  sm:h-88  flex flex-col justify-center  sm:hover:shadow-2xl p-[1%]' >
+    <div className='cursor-pointer items-center w-full sm:w-96  sm:h-88  flex flex-col justify-center  sm:hover:shadow-2xl p-[1%]' onClick={naviagteHandler} >
       <div className='w-full sm:w-80 flex flex-col items-center relative 'onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>
-        <img src={props.imageUrl} alt="" className='w-48 h-48 md:w-64 md:h-64' 
+        <img src={props.imageUrl} alt="" className='w-48 h-48 md:w-64 md:h-64' onClick={()=>navigate(`/productdetail/${props._id}`)} 
         />
         {isHovered && (
         <button
@@ -36,7 +39,7 @@ const Card = ({props}) => {
         )}
 
       </div>
-      <div className='p-[1%] w-full items-center justify-center cursor-pointer 'onClick={naviagteHandler} >
+      <div className='p-[1%] w-full items-center justify-center ' >
         <p className='font-semibold text-center sm:text-start text-sm sm:text-lg my-1 sm:my-0 '>{ProductName}</p>
         <p className='text-red-500 text-center sm:text-start sm:text-lg my-1 sm:my-0'>${props.price}</p>
         <div className='flex justify-center my-1'>
