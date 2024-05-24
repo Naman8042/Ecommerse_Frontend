@@ -35,7 +35,7 @@ const Login = () => {
       </div>
       {
         isLogin?(
-          <div className='w-screen flex h-[90%] flex-col sm:flex-row '>
+          <div className='w-screen flex h-[92%] flex-col sm:flex-row '>
         <div className='sm:w-[60%] w-full '>
          <img src={LoginPhoto} alt='' className='w-full h-full'/>
         </div>
@@ -48,7 +48,7 @@ const Login = () => {
         </div>
       </div>
         ):(
-        <div className='w-screen flex h-[90%] flex-col sm:flex-row '>
+        <div className='w-screen flex h-[92%] flex-col sm:flex-row '>
         <div className='w-full sm:w-[60%]'>
          <img src={LoginPhoto} alt='' className='w-full h-full'/>
         </div>

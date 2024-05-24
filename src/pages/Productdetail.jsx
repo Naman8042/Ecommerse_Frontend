@@ -45,25 +45,24 @@ const Productdetail = () => {
   return (
     <div className=" overflow-x-hidden h-screen">
 
-      <div className="h-[10%]">
+      <div className="h-[8%]">
         <Navbar />
       </div>
-      <div className='h-[90%]'>
+      <div className='h-[92%]'>
       <div className="w-screen lg:px-[10%] sm:px-[4%] px-7 overflow-x-auto flex flex-col sm:flex-row items-center justify-center gap-[5%]">
-        
         <div className="w-[60%] gap-5 hidden sm:flex h-screen">
-          <div className="w-[20%] flex flex-col justify-center ">
-            <div className="w-full p-[1%] my-[5%]">
-              <img src={Data1.imageUrl} alt="" />
+          <div className="w-[20%] flex flex-col justify-center gap-4 ">
+            <div className="w-full ">
+              <img src={Data1.imageUrl} alt="" className='w-32 h-32'/>
             </div>
-            <div className="w-full p-[1%] my-[5%]">
-              <img src={Data1.imageUrl} alt="" />
+            <div className="w-full ">
+              <img src={Data1.imageUrl} alt="" className='w-32 h-32'/>
             </div>
-            <div className="w-full p-[1%] my-[5%]">
-              <img src={Data1.imageUrl} alt="" />
+            <div className="w-full ">
+              <img src={Data1.imageUrl} alt="" className='w-32 h-32'/>
             </div>
-            <div className="w-full p-[1%] my-[5%]">
-              <img src={Data1.imageUrl} alt="" />
+            <div className="w-full ">
+              <img src={Data1.imageUrl} alt="" className='w-32 h-32' />
             </div>
           </div>
           <div className="w-[80%] flex justify-center h-full items-center ">
@@ -83,8 +82,8 @@ const Productdetail = () => {
             {Data1.description}
           </p>
           <Rating name="read-only" value={value} readOnly/>
-          <div className="flex  sm:flex-row flex-col w-full gap-5 sm:gap-1 items-center justify-center">
-            <div className="sm:w-full w-[85%] flex  items-center mx-[1%] justify-center">
+          <div className="flex  sm:flex-row flex-col w-full gap-5 sm:gap-1 items-center ">
+            <div className=" w-[50%] flex  items-center ">
               <button className="w-[25%] sm:w-[20%] p-[1%] border-2 text-2xl border-collapse border-gray-500 text-center">
                 +
               </button>
@@ -98,7 +97,7 @@ const Productdetail = () => {
             
             
           </div>
-          <div className="w-full flex flex-col sm:flex-row gap-4  justify-center items-center ">
+          <div className="w-full flex flex-col sm:flex-row gap-4   items-center ">
               <button className="bg-red-500 w-[85%] sm:w-[40%] p-[2%]   rounded-xl text-white ">
                 Buy Now
               </button>

@@ -139,9 +139,10 @@ const Home = () => {
             <div className='w-[94.5%] text-red-600 font-semibold lg:text-xl'>Today's</div>
          </div>
          <div className='px-[4%] md:px-[8%] flex flex-col sm:flex-row gap-3 md:gap-[10%] w-full items-center sm:items-end my-[2%]'>
-            <h2 className='lg:text-4xl text-xl font-semibold w-full sm:w-[20%]  text-start px-[4%] sm:px-[0%]'>Flash Sales</h2>
-            <div className='flex sm:items-end gap-4 w-full  sm-[w-80%]  justify-start px-[4%]'>
-               <div>
+            <h2 className='lg:text-4xl text-xl font-semibold w-full sm:w-[20%] text-start px-[4%] sm:px-[0%]'>Flash Sales</h2>
+            <div className='flex sm:items-end gap-4 w-full  sm:w-[80%] bg justify-between px-[4%]'>
+              <div className='flex gap-4 justify-start '>
+              <div>
                   <p className='text-center text-xl   font-semibold'>Days</p>
                   <p className='text-center text-xl font-semibold md:text-2xl lg:text-5xl'>{days}</p>
                </div>
@@ -160,11 +161,15 @@ const Home = () => {
                   <p className='text-center md:text-xl font-semibold'>Seconds</p>
                   <p className='text-center text-xl md:text-2xl lg:text-5xl font-semibold '>{seconds}</p>
                </div>
+              </div>
+              <div>
+              <div className='hidden sm:flex   gap-10 justify-end items-end    my-[2%] '>
+              <button onClick={()=>decrement(0)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-7'/></button>
+              <button onClick={()=>increment(0)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-7'/></button>
+              </div>
+              </div>
             </div>
-            <div className='hidden sm:flex sm:w-[20%]  gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%] '>
-            <button onClick={()=>decrement(0)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-7'/></button>
-            <button onClick={()=>increment(0)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-7'/></button>
-            </div>
+            
          </div>
          
          <div className='sm:flex px-[4%] sm:px-[0%] sm:pl-[8%] sm:overflow-x-visible my-[2%] gap-2 sm:gap-[5%] lg:gap-[6%] w-full grid grid-cols-2'>
@@ -218,10 +223,10 @@ const Home = () => {
                <p className='sm:text-xl text-base'>Gaming</p>
             </div>
          </div>
-         <div className='px-[6%] flex justify-between w-full my-[10%] sm:my-[5%] sm:mx-[0%]'>
-            <p className='sm:text-4xl text-xl font-semibold  w-[80%] '>Best Selling Products</p>
+         <div className='px-[6%]  flex justify-between w-full my-[10%] sm:my-[5%] sm:mx-[0%]'>
+            <p className='sm:text-4xl text-xl font-semibold  w-[50%] '>Best Selling Products</p>
             
-            <div className='hidden sm:flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
+            <div className='hidden sm:flex w-[40%] justify-end gap-10  my-[2%]'>
               
             <button onClick={()=>decrement(1)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8' /></button>
             <button onClick={()=>increment(1)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>
@@ -241,7 +246,7 @@ const Home = () => {
          </div>
          <div className='px-[6%] flex justify-between'>
             <p className='sm:text-4xl font-semibold w-[80%] text-xl'>Explore All Products</p>
-            <div className='hidden sm:flex w-[20%] gap-10 justify-end items-center px-[4%] sm:px-[8%] my-[2%]'>
+            <div className='hidden sm:flex w-[20%] gap-10 justify-end items-center  my-[2%]'>
               
             <button onClick={()=>decrement(2)} className=' px-[1%] py-[1%]'><FaCircleChevronLeft className='size-6 sm:size-7 md:size-8' /></button>
             <button onClick={()=>increment(2)} className=' px-[1%] py-[1%]'><FaCircleChevronRight className='size-6 sm:size-7 md:size-8'/></button>

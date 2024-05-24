@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className='cursor-pointer'><Link to={"/"}>Home</Link></div>
         <div className='cursor-pointer'>Contact</div>
         <div className='cursor-pointer'>About</div>
-        <div className='cursor-pointer'><Link to={"/login"}>Signup</Link></div>
+        <div className='cursor-pointer'><Link to={"/login"}>Login</Link></div>
       </div>
       <div className='flex gap-[5%] w-[40%] justify-center items-center'>
         <div className='w-[50%] flex items-center bg-gray-50 rounded-lg'>

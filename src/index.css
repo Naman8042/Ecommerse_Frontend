@@ -3,3 +3,11 @@
 @tailwind utilities;
 
   
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+  }
+  
+  *::-webkit-scrollbar {
+    width: 1px;
+  }
