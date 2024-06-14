@@ -26,11 +26,11 @@ const Home = () => {
    const [end2, setEnd2] = useState(6);
 
    useEffect(() => {
-      async function getData(){
-         await axios.get("https://deploy-lej8.onrender.com/api/v1/getall")
-         .then((res) => setData(res.data.data));
-      }
-      getData()
+      
+      axios.get("https://deploy-lej8.onrender.com/api/v1/getall")
+      .then((res) => setData(res.data.data));
+   
+      
    }, []);
 
    useEffect(() => {
