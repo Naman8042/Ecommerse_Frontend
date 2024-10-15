@@ -44,8 +44,8 @@ const Cart = () => {
                 }
                 <div className='w-full flex flex-col sm:flex-row justify-between gap-4'>
                     <div className='w-full sm:w-[40%] flex gap-5 '>
-                        <input placeholder='Coupon Code' type='text' className='border-2 border-black h-[30%] w-[60%] p-[1%]'/>
-                        <button className='text-white bg-red-500 rounded-xl px-[2%] py-[1%] h-[30%]'>Apply Coupon</button>
+                        <input placeholder='Coupon Code' type='text' className='border-2 border-black h-[25%] w-[60%] p-[1%]'/>
+                        <button className='text-white bg-red-500 rounded-xl px-[2%] py-[1%] h-[25%]'>Apply Coupon</button>
                     </div>
                     <div className='w-full sm:w-[30%] border-2 p-[1%] rounded-xl'>
                         <p className='px-[2%] text-lg'>Cart Total</p>
@@ -64,7 +64,7 @@ const Cart = () => {
                         <div className=' justify-center hidden sm:flex'>
                         <Link to="/billingdetails">   
                         <div className='flex w-full'>
-                        <button className='text-white bg-red-500 w-full py-[5%] px-1'>Proceed to Checkout</button>
+                        <button className='text-white bg-red-500 w-full py-[5%] px-5 rounded-md'>Proceed to Checkout</button>
                         </div>
                         </Link>
                         </div>

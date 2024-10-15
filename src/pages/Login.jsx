@@ -66,7 +66,7 @@ const Login = () => {
            <input type='text' placeholder='Name' className='w-[85%] sm:w-[50%] sm:p-[1%] outline-none border-gray-400 border-b-2 sm:border-b-2 border-2 rounded-md p-[2%]'/>  
            <input type='text' placeholder='Email or Phone Number'  className='w-[85%] sm:w-[50%] sm:p-[1%] outline-none border-gray-400 border-b-2 sm:border-b-2 border-2 rounded-md p-[2%]'/>  
            <input type='password' placeholder='Password' className='w-[85%] sm:w-[50%] sm:p-[1%] outline-none border-gray-400 border-b-2 sm:border-b-2 border-2 rounded-md p-[2%]'/>  
-           <button onClick={()=>(toast.success("SignUp Successfully"))} className='bg-red-500 text-white w-[50%] py-[1.5%] rounded-md'>Create Account</button>
+           <button onClick={()=>(toast.success("SignUp Successfully"),setIsLogin(true))} className='bg-red-500 text-white w-[50%] py-[1.5%] rounded-md'>Create Account</button>
 
         </div>
       </div>

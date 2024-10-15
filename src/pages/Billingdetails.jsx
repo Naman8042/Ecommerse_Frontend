@@ -2,10 +2,21 @@ import React, { useState ,useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import {useSelector} from 'react-redux'
 import Cookies from 'js-cookie'
+import {toast} from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
 const Billingdetails = () => {
   const navigate = useNavigate()
+  const billingDetails = {
+    firstName: 'Shaurya',
+    address: '123 Main St',
+    streetAddress: '456 Elm St',
+    apartment: 'Apt. 5B',
+    townCity: 'Springfield',
+    phoneNumber: '+1 555-123-4567',
+    email: 'shaurya@123'
+};
+
   const[login,setIsLogin] = useState(false)
   useEffect(()=>{
     const token  = Cookies.get('token')
@@ -26,19 +37,19 @@ const Billingdetails = () => {
         <div className='w-full sm:w-[50%] flex  flex-col items-center justify-center sm:justify-start sm:items-start sm:pl-[6%]'>
             <h1 className='w-full text-3xl text-center sm:text-start font-semibold mb-[5%] sm:my-[1%]'>Billing Details</h1>
             <label>First Name</label>
-            <input  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
+            <input value={billingDetails.firstName}  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
             <label>Address</label>
-            <input  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
+            <input  value={billingDetails.address}  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
             <label>Street Address</label>
-            <input  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
+            <input  value={billingDetails.streetAddress}  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
             <label>Apartment floor etc</label>
-            <input  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
+            <input  value={billingDetails.apartment}  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
             <label>Town City</label>
-            <input  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
+            <input  value={billingDetails.townCity}  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
             <label>Phone Number</label>
-            <input  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
+            <input  value={billingDetails.phoneNumber}  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
             <label>Email</label>
-            <input  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
+            <input  value={billingDetails.email}  className='w-[90%] rounded-xl sm:rounded-none sm:w-[70%]  mb-[2%] p-[1%] border-2 bg-gray-200'/>
         </div>
         <div className='w-full sm:w-[50%] px-2 sm:px-0 sm:pr-[6%] pt-[3%]'>
            <div className='w-full sm:w-[60%]  sm:p-0'>
@@ -98,7 +109,7 @@ const Billingdetails = () => {
             <button className='text-white bg-red-500 px-[2%] py-[1%] h-[30%] w-[40%] sm:w-[25%]'>Apply Coupon</button>
           </div>
           <div className='flex justify-center w-full  sm:justify-start'>
-          <button className='text-white bg-red-500 px-[2%] py-[1%] mt-[3%] w-[50%] sm:w-[30%] '>Place Order</button>
+          <button className='text-white bg-red-500 px-[2%] py-[1%] mt-[3%] w-[50%] sm:w-[30%] ' onClick={()=>(toast.success("Placed Order Successfully"))}>Place Order</button>
           </div>
         </div>
       </div>
