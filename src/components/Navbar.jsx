@@ -62,8 +62,8 @@ const Navbar = () => {
    {
     showDropdown?(
       <div className='absolute md:left-[82%] sm:left-[70%] bg-gray-100 sm:w-[25%] md:w-[17%] lg:w-[13%] sm:text-sm lg:text-xl '>
-      <p className='px-[3%] py-[2%]'>Manage My Accounts</p>
-      <p className='px-[3%] py-[2%]'>My Orders</p>
+      <p className='px-[3%] py-[2%] cursor-pointer' onClick={()=>navigate("/manageaccounts")}>Manage My Accounts</p>
+      <p className='px-[3%] py-[2%] cursor-pointer' onClick={()=>navigate("/orderhistory")}>My Orders</p>
     </div>
     ):(
       <>

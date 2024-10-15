@@ -5,6 +5,8 @@ import Productdetail from './pages/Productdetail'
 import Cart from './pages/Cart'
 import Phonesidebar from './components/Phonesidebar'
 import Billingdetails from './pages/Billingdetails'
+import Manageorders from './pages/Manageorders'
+import OrderHistory from './pages/OrderHistory'
 
 function App() {
  
@@ -17,6 +19,8 @@ function App() {
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/phonesidebar' element={<Phonesidebar/>}/>
     <Route path='/billingdetails' element={<Billingdetails/>}/>
+    <Route path='/orderHistory' element={<Manageorders/>}/>
+    <Route path='/manageaccounts' element={<OrderHistory/>}/>
   </Routes>
   </div>
   )
